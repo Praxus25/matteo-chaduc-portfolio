@@ -1,0 +1,222 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* === RETRO NEON THEME === */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  background: #0a0a0a;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+/* Headings use retro font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+/* Monospace for code */
+code, pre {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Custom neon scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-left: 1px solid #ff006e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff006e 0%, #8b00ff 100%);
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ff006e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff1a80 0%, #9d00ff 100%);
+  box-shadow: 0 0 20px #ff006e, 0 0 30px #8b00ff;
+}
+
+/* Neon text glow utilities */
+.neon-text-pink {
+  color: #ff006e;
+  text-shadow: 
+    0 0 5px #ff006e,
+    0 0 10px #ff006e,
+    0 0 20px #ff006e,
+    0 0 40px #ff006e;
+}
+
+.neon-text-cyan {
+  color: #00f0ff;
+  text-shadow: 
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px #00f0ff;
+}
+
+.neon-text-purple {
+  color: #8b00ff;
+  text-shadow: 
+    0 0 5px #8b00ff,
+    0 0 10px #8b00ff,
+    0 0 20px #8b00ff,
+    0 0 40px #8b00ff;
+}
+
+.neon-text-green {
+  color: #00ff41;
+  text-shadow: 
+    0 0 5px #00ff41,
+    0 0 10px #00ff41,
+    0 0 20px #00ff41,
+    0 0 40px #00ff41;
+}
+
+/* Neon border glow */
+.neon-border-pink {
+  border: 2px solid #ff006e;
+  box-shadow: 
+    0 0 5px #ff006e,
+    0 0 10px #ff006e,
+    inset 0 0 5px #ff006e,
+    inset 0 0 10px #ff006e;
+}
+
+.neon-border-cyan {
+  border: 2px solid #00f0ff;
+  box-shadow: 
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    inset 0 0 5px #00f0ff,
+    inset 0 0 10px #00f0ff;
+}
+
+.neon-border-purple {
+  border: 2px solid #8b00ff;
+  box-shadow: 
+    0 0 5px #8b00ff,
+    0 0 10px #8b00ff,
+    inset 0 0 5px #8b00ff,
+    inset 0 0 10px #8b00ff;
+}
+
+/* Neon box shadow */
+.neon-box-pink {
+  box-shadow: 
+    0 0 10px #ff006e,
+    0 0 20px #ff006e,
+    0 0 30px #ff006e,
+    0 0 40px #ff006e;
+}
+
+.neon-box-cyan {
+  box-shadow: 
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 30px #00f0ff,
+    0 0 40px #00f0ff;
+}
+
+.neon-box-purple {
+  box-shadow: 
+    0 0 10px #8b00ff,
+    0 0 20px #8b00ff,
+    0 0 30px #8b00ff,
+    0 0 40px #8b00ff;
+}
+
+/* Retro grid background */
+.retro-grid {
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(255, 0, 110, 0.1) 25%, rgba(255, 0, 110, 0.1) 26%, transparent 27%, transparent 74%, rgba(255, 0, 110, 0.1) 75%, rgba(255, 0, 110, 0.1) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(0, 240, 255, 0.1) 25%, rgba(0, 240, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(0, 240, 255, 0.1) 75%, rgba(0, 240, 255, 0.1) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
+
+/* Scanlines effect */
+.scanlines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s infinite;
+}
+
+/* Pulse animation for neon */
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 20px currentColor;
+  }
+  50% {
+    opacity: 0.8;
+    text-shadow: 
+      0 0 2px currentColor,
+      0 0 5px currentColor,
+      0 0 10px currentColor;
+  }
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Selection color */
+::selection {
+  background: #ff006e;
+  color: #000000;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #ff006e;
+  color: #000000;
+  text-shadow: none;
+}
