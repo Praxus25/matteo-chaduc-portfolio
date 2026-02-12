@@ -1,6 +1,3 @@
-// 🎨 CONFIGURATION DU PORTFOLIO - STYLE RETRO NEON
-// Modifiez ces informations pour personnaliser votre portfolio
-
 export const portfolioData = {
   // Informations personnelles
   name: "Mattéo CHADUC",
